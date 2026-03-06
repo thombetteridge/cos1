@@ -1,8 +1,6 @@
 #pragma once
 
-#include "base.hh"
-
-C_LINKAGE_BEGIN
+#include "base.h"
 
 #include <lauxlib.h>
 #include <lua.h>
@@ -20,5 +18,3 @@ int l_is_mouse_button_released(lua_State *L);
 int l_gui_slider(lua_State *L);
 int l_gui_button(lua_State *L);
 int l_draw_text(lua_State *L);
-
-C_LINKAGE_END

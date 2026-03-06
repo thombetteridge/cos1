@@ -14,11 +14,3 @@ typedef int64_t i64;
 
 typedef float  f32;
 typedef double f64;
-
-#ifdef __cplusplus
-#define C_LINKAGE_BEGIN extern "C" {
-#define C_LINKAGE_END }
-#else
-#define C_LINKAGE_BEGIN
-#define C_LINKAGE_END
-#endif

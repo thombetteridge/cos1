@@ -1,6 +1,4 @@
 -- At the top
-local points = {}
-
 
 slider_value = slider_value or 10.0
 
@@ -8,22 +6,13 @@ ft = 0
 
 function update()
     -- if is_mouse_button_pressed(0) then -- left click (you'll need to expose this too)
-        local mx, my = get_mouse_position()
-        -- local pt = add_point(mx, my)
-        table.insert(points, { x = mx, y = my })
-    -- end
-
-    -- if gui_button(20, 200, 140, 30, "Clear Points") then
-        
-    if ft % 1000 == 0 then
-        points = {}
-    end
+    local mx, my = get_mouse_position()
 end
 
 -- Global so it persists
 
 function draw()
-    draw_text("Civil Modelling – click to test", 20, 40, 20, DARKGRAY)
+    draw_text("Civil Modelling – click to test", 20, 40, 20)
 
     local mx, my = get_mouse_position()
     draw_circle(mx, my, slider_value, { 255, 255, 0, 255 })
@@ -35,11 +24,6 @@ function draw()
     slider_value = gui_slider(20, 120, 200, 30, slider_value, 1, 50, "Size", "px")
     -- draw_circle(800, 400, slider_value, { 200, 100, 50, 180 })
     draw_text("Circle size: " .. math.floor(slider_value), 20, 160, 20, GRAY)
-    draw_text("Num circles: " .. ft, 20, 300, 20, GRAY)
 
     ft = ft + 1
-
-    for _, p in pairs(points) do
-        draw_circle(p.x, p.y, 10, { 255, 0, 255 })
-    end
 end

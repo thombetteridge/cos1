@@ -12,8 +12,8 @@ set_warnings("all", "extra")
 
 target("cos")
     set_kind("binary")
-    -- add_files("src/*.c")
-    add_files("src/*.cc")
+    add_files("src/*.c")
+    -- add_files("src/*.cc")
     -- add_files("src/main.cc") -- Unity Build
 
     set_targetdir(".")
