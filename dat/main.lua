@@ -26,14 +26,14 @@ function draw()
     draw_text("Civil Modelling – click to test", 20, 40, 20, DARKGRAY)
 
     local mx, my = get_mouse_position()
-    draw_circle(mx, my, 12, { 255, 255, 0, 255 })
+    draw_circle(mx, my, slider_value, { 255, 255, 0, 255 })
 
     -- Example geometry
     draw_line(100, 100, 300, 400, 0, 120, 220)
     draw_line(300, 400, 600, 150, 80, 180, 255)
     -- In draw()
     slider_value = gui_slider(20, 120, 200, 30, slider_value, 1, 50, "Size", "px")
-    draw_circle(800, 400, slider_value, { 200, 100, 50, 180 })
+    -- draw_circle(800, 400, slider_value, { 200, 100, 50, 180 })
     draw_text("Circle size: " .. math.floor(slider_value), 20, 160, 20, GRAY)
     draw_text("Num circles: " .. ft, 20, 300, 20, GRAY)
 

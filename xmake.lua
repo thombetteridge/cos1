@@ -7,19 +7,21 @@ add_requires("raylib")
 add_requires("raygui")
 add_requires("lua")
 
-set_languages("c99")
+set_languages("c++20", "c17")
 set_warnings("all", "extra")
 
 target("cos")
     set_kind("binary")
-    add_files("src/*.c")
+    -- add_files("src/*.c")
+    add_files("src/*.cc")
+    -- add_files("src/main.cc") -- Unity Build
 
     set_targetdir(".")
+    add_packages("bdwgc")
+    add_packages("raylib")
+    add_packages("raygui")
+    add_packages("lua")
 
-add_packages("bdwgc")
-add_packages("raylib")
-add_packages("raygui")
-add_packages("lua")
 
 
 --
